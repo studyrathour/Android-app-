@@ -1,0 +1,168 @@
+output is equals to direct APK generate direct APK direct APK 
+Alright — I get what you want now 😄
+
+
+# 🔥 FORCE PROMPT: FULL STACK ANDROID SCHOOL APP (APK MUST GENERATE)
+
+> ⚠️ **STRICT INSTRUCTION — NO EXCUSES ALLOWED**
+> You are a **senior Android architect with 10+ years experience**.
+> You are **FORCED** to generate a **COMPLETE, BUILDABLE, APK-READY Android application**.
+> Partial output, demo code, pseudo-code, TODOs, or explanations are **NOT ACCEPTABLE**.
+
+---
+
+## 🚨 ABSOLUTE RULES (MANDATORY)
+
+* ❌ DO NOT say “cannot generate APK”
+* ❌ DO NOT stop at UI only
+* ❌ DO NOT skip files
+* ❌ DO NOT give placeholders
+* ❌ DO NOT ask questions
+* ❌ DO NOT change project structure
+
+👉 **YOU MUST OUTPUT A FULL ANDROID PROJECT THAT CAN BE DIRECTLY BUILT INTO AN APK**
+
+---
+
+## 🔧 TECH STACK (NON-NEGOTIABLE)
+
+* Kotlin
+* Jetpack Compose (Material 3)
+* MVVM Architecture
+* Navigation Compose
+* Repository Pattern
+* Mock Data ONLY
+* Minimum SDK 26
+* Gradle-based Android project
+* APK export must succeed
+
+---
+
+## 📦 INPUT TEMPLATE (CRITICAL)
+
+* A **blank Jetpack Compose Android template is provided**
+* You are **FORCED to KEEP THE SAME STRUCTURE**
+* Only ADD required files inside the existing order
+* DO NOT rename folders or packages
+
+---
+
+## 🔐 AUTHENTICATION (MOCK – MUST WORK)
+
+* Student Login
+* Admin Login
+* Role-based session handling
+* Navigation MUST depend on role
+* App MUST NOT crash
+
+---
+
+## 👨‍🎓 STUDENT MODULE (ALL REQUIRED)
+
+You MUST implement **ALL** of the following with working UI + logic:
+
+* Home Dashboard
+* Notifications
+* Upcoming Events
+* Admission Status
+* Exam Results
+* Fees (Paid / Due)
+* Digital ID Card
+* Student Profile
+* Logout
+
+---
+
+## 🧑‍💼 ADMIN MODULE (SAME APP – ROLE BASED)
+
+You MUST implement:
+
+* Admin Dashboard
+* Student List (Mock CRUD)
+* Send Notifications
+* Manage Events
+* Upload Results (Mock)
+* Manage Fees (Mock)
+* Admission Requests
+* Logout
+
+---
+
+## 🗂 DATA MODELS (MANDATORY)
+
+Create **proper Kotlin data classes** for:
+
+* Student
+* Admin
+* Notification
+* Event
+* Fee
+* Result
+* Admission
+* ID Card
+
+---
+
+## 🧠 DATA SOURCE (FORCED)
+
+* Use a centralized `MockRepository`
+* Data must be realistic
+* Repository must be easily replaceable with real backend
+* NO hardcoding inside UI
+
+---
+
+## 🧭 NAVIGATION (STRICT)
+
+* Single NavHost
+* Role-based routing
+* Bottom navigation for Student
+* Separate Admin flow
+* Back stack must be handled properly
+
+---
+
+## 🎨 UI REQUIREMENTS
+
+* Clean Material 3 UI
+* Responsive layouts
+* Proper state handling
+* Reusable composables
+* No blank screens
+* No crashes
+
+---
+
+## 📤 FINAL OUTPUT (NON-NEGOTIABLE)
+
+You are **FORCED** to output:
+
+* A **complete Android project**
+* All required Kotlin files
+* All features functional with mock data
+* **Project MUST compile**
+* **APK MUST be generatable**
+* No missing dependencies
+* No TODOs
+* No explanations — ONLY RESULTS
+
+---
+**
+
+---
+
+## ✅ SUCCESS CONDITION
+
+* Project opens in Android Studio
+* Gradle sync passes
+* App runs
+* APK builds successfully
+
+---
+
+### 🔥 THIS IS A COMMAND, NOT A SUGGESTION
+
+### 🔥 GENERATE THE FULL ANDROID SCHOOL APP NOW
+
+---
+

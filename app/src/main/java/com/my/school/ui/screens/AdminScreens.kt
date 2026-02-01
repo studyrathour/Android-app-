@@ -3,11 +3,19 @@ package com.my.school.ui.screens
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.School
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.my.school.model.AdmissionStatus
+import com.my.school.ui.components.DashboardItem
 import com.my.school.viewmodel.AdminViewModel
 
 @Composable
@@ -27,16 +35,36 @@ fun AdminDashboardScreen(adminViewModel: AdminViewModel) {
         )
     }
 
-    // Simple Tabs or just a list of features
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         Text("Admin Dashboard", style = MaterialTheme.typography.headlineMedium)
         Spacer(modifier = Modifier.height(16.dp))
 
-        Button(onClick = { showAddEventDialog = true }, modifier = Modifier.fillMaxWidth()) {
-            Text("Add New Event")
+        // Quick Actions Grid
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.height(120.dp)
+        ) {
+            item {
+                DashboardItem(
+                    title = "Add Event",
+                    icon = Icons.Filled.Add,
+                    color = MaterialTheme.colorScheme.primaryContainer,
+                    onClick = { showAddEventDialog = true }
+                )
+            }
+            item {
+                DashboardItem(
+                    title = "Students",
+                    icon = Icons.Filled.School,
+                    color = MaterialTheme.colorScheme.secondaryContainer,
+                    onClick = { /* Navigate to full student list */ }
+                )
+            }
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         Text("Admission Requests", style = MaterialTheme.typography.titleLarge)
         LazyColumn(modifier = Modifier.weight(1f)) {

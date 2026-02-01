@@ -5,6 +5,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
@@ -33,6 +34,17 @@ fun SchoolAppTopBar(
             }
         },
         actions = {
+            BadgedBox(
+                badge = {
+                    Badge { Text("3") }
+                }
+            ) {
+                 Icon(
+                    imageVector = Icons.Filled.Notifications,
+                    contentDescription = "Notifications"
+                )
+            }
+            Spacer(modifier = Modifier.width(8.dp))
             IconButton(onClick = logout) {
                 Icon(
                     imageVector = Icons.Filled.Logout,
@@ -41,6 +53,43 @@ fun SchoolAppTopBar(
             }
         }
     )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun DashboardItem(
+    title: String,
+    icon: ImageVector,
+    color: androidx.compose.ui.graphics.Color,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth()
+            .height(100.dp),
+        onClick = onClick,
+        colors = CardDefaults.cardColors(containerColor = color)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                imageVector = icon,
+                contentDescription = title,
+                modifier = Modifier.size(40.dp),
+                tint = MaterialTheme.colorScheme.onPrimaryContainer
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = title,
+                style = MaterialTheme.typography.titleSmall,
+                color = MaterialTheme.colorScheme.onPrimaryContainer
+            )
+        }
+    }
 }
 
 @Composable

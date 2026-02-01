@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.school.app"
+    namespace = "com.my.school"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.school.app"
+        applicationId = "com.my.school"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

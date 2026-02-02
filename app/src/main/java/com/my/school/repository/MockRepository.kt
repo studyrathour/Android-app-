@@ -128,4 +128,14 @@ object MockRepository {
     suspend fun addMockStudent(student: Student) {
         students.add(student)
     }
+
+    suspend fun addFee(fee: Fee) {
+        delay(DELAY_MS)
+        fees.add(fee)
+    }
+
+    suspend fun addResult(result: Result) {
+        delay(DELAY_MS)
+        results.add(result)
+    }
 }

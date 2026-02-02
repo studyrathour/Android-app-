@@ -56,4 +56,54 @@ class AdminViewModel : ViewModel() {
             _admissions.value = MockRepository.getAdmissions()
         }
     }
+
+    fun sendNotification(title: String, message: String, target: TargetAudience) {
+        viewModelScope.launch {
+            val notification = Notification(
+                id = System.currentTimeMillis().toString(),
+                title = title,
+                message = message,
+                date = "2024-02-02", // Mock date
+                targetAudience = target
+            )
+            MockRepository.sendNotification(notification)
+        }
+    }
+
+    fun addFee(studentId: String, title: String, amount: Double, dueDate: String) {
+        viewModelScope.launch {
+            val fee = Fee(
+                id = System.currentTimeMillis().toString(),
+                studentId = studentId,
+                title = title,
+                amount = amount,
+                dueDate = dueDate,
+                status = FeeStatus.DUE
+            )
+            MockRepository.addFee(fee)
+        }
+    }
+
+    fun addResult(studentId: String, examName: String, subject: String, marksObtained: Int, totalMarks: Int) {
+        viewModelScope.launch {
+            val percentage = (marksObtained.toDouble() / totalMarks.toDouble()) * 100
+            val grade = when {
+                percentage >= 90 -> "A+"
+                percentage >= 80 -> "A"
+                percentage >= 70 -> "B"
+                percentage >= 60 -> "C"
+                else -> "F"
+            }
+            val result = Result(
+                id = System.currentTimeMillis().toString(),
+                studentId = studentId,
+                examName = examName,
+                subject = subject,
+                marksObtained = marksObtained,
+                totalMarks = totalMarks,
+                grade = grade
+            )
+            MockRepository.addResult(result)
+        }
+    }
 }

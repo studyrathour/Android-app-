@@ -12,6 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import com.my.school.ui.components.SchoolAppTopBar
 import com.my.school.ui.components.StudentBottomBar
 import com.my.school.ui.screens.*
+import com.my.school.ui.*
 import com.my.school.viewmodel.AdminViewModel
 import com.my.school.viewmodel.AuthState
 import com.my.school.viewmodel.AuthViewModel
@@ -114,7 +115,22 @@ fun SchoolAppNavigation(
 
             // Admin Routes
             composable("admin_dashboard") {
-                AdminDashboardScreen(adminViewModel = adminViewModel)
+                AdminDashboardScreen(
+                    adminViewModel = adminViewModel,
+                    onNavigate = { route -> navController.navigate(route) }
+                )
+            }
+
+            composable("admin_notification") {
+                AdminNotificationScreen(navController = navController, viewModel = adminViewModel)
+            }
+
+            composable("admin_fee") {
+                AdminFeeScreen(navController = navController, viewModel = adminViewModel)
+            }
+
+            composable("admin_result") {
+                AdminResultScreen(navController = navController, viewModel = adminViewModel)
             }
         }
     }
